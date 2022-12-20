@@ -2,11 +2,11 @@
 
 /**
  * _atoi - function
- * @as: pointer to a character string
+ * @as: string
  *
  * Return: integer
+ *
  */
-
 int _atoi(char *s)
 {
 	unsigned int ha, i, j, k, the_length, pau, l;

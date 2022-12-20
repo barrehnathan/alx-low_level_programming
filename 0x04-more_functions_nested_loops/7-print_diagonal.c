@@ -1,30 +1,23 @@
 #include "main.h"
+
 /**
- *print_diagonal - to prints diagonal line
- * @n: Is the number of times
- *
- * Return: 0 value
+ * print_diagonal - draws a diagonal line on the terminal
+ * @n: end of line
  */
+
 void print_diagonal(int n)
 {
-	int p;
-	int q;
+	int x, y;
 
-	for (p = 0; p < n; p++)
+	if (n <= 0)
+		_putchar('\n');
+
+	for (x = 0; x < n; x++)
 	{
-		if (n <= 0)
-		{
-			break;
-		}
-		else
-		{
-			for (q = 0; q < p; q++)
-			{
-				_putchar(' ');
-			}
-			_putchar('\\');
-			_putchar('\n');
-		}
+		for (y = 0; y < x; y++)
+			_putchar(' ');
+
+		_putchar('\\');
+		_putchar('\n');
 	}
-	_putchar('\n');
 }

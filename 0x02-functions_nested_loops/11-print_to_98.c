@@ -1,25 +1,46 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main - entry point
+ * print_to_98 - function to print natural numbers
  *
- * Return: returns 0
+ * @n: is the input character
+ *
+ * Return: Nothing
  *
  */
-int main(void)
+void print_to_98(int n)
 {
-	int k;
-	int m;
-
-	k = 0;
-	while (k < 1024)
+	if (n <= 98)
 	{
-		if ((k % 3 == 0) || (k % 5 == 0))
+		for (; n <= 98; n++)
 		{
-			m = m + k;
+			if (n == 98)
+			{
+				printf("%d", n);
+				printf("\n");
+				break;
+			}
+			else
+			{
+				printf("%d, ", n);
+			}
 		}
-		k++;
 	}
-	printf("%d\n", m);
-	return (0);
+	else
+	{
+		for (; n >= 98; n--)
+		{
+			if (n == 98)
+			{
+				printf("%d", n);
+				printf("\n");
+				break;
+			}
+			else
+			{
+				printf("%d, ", n);
+			}
+
+		}
+	}
 }

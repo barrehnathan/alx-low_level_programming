@@ -1,21 +1,30 @@
+#include <stdio.h>
 #include "main.h"
-
 /**
- * print_chessboard - function to print chessboard
- * @a: is the character to enter
- * Return: chessboard
+ * print_diagsums - print sum of a diagnols in a matri
+ * @a: is the name of array
+ * @size: is the size of matrix
+ * Return: void
  */
-void print_chessboard(char (*a)[8])
+void print_diagsums(int *a, int size)
 {
-	int i;
 	int j;
+	int i;
+	int y;
+	int z;
 
-	for (i = 0; i < 8; i++)
+	/* y is the sum of main diagnoa */
+	y = 0;
+	/* z is the sum of minor diagnol */
+	z = 0;
+	for (i = 0; i <= size; i++)
 	{
-		for (j = 0; j < 8; j++)
+		for (j = 0; j <= size; j++)
 		{
-			_putchar(a[i][j]);
+			y = y + a[i];
+			printf("sum of main diagnol is %d: ", y);
+			z = z + a[j];
+			printf("sum of minor diagnol is %d", z);
 		}
-		_putchar('\n');
 	}
 }

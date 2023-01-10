@@ -1,71 +1,43 @@
+#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
 
 /**
- * check_num - check - string there are digits
- * @str: array str
- *
- * Return: Always 0
- */
-
-int check_num(char *str)
-
-{
-	unsigned int count;
-
-	count = 0;
-	while (count < strlen(str))
-
-	{
-		if (!isdigit(str[count]))
-
-		{
-			return (0);
-		}
-
-		count++;
-	}
-	return (1);
-}
-
-/**
- * main - print the name of the program
- * @argc: count arguments
- * @argv: Arguments
- *
+ * main - adds two positive numbers
+ * @argc: arguments count
+ * @argv: arguments vector
  * Return: Always 0
  */
 
 int main(int argc, char *argv[])
-
 {
+	int i;
+	unsigned int c, sum = 0;
+	char *arr;
 
-	int count;
-	int str_to_int;
-	int sum = 0;
-
-	count = 1;
-	while (count < argc)
+	if (argc < 1)
+		printf("0\n");
+	else
 	{
-		if (check_num(argv[count]))
-
+		for (i = 1; i < argc; i++)
 		{
-			str_to_int = atoi(argv[count]);
-			sum += str_to_int;
+			arr = argv[i];
+
+			for (c = 0; c < strlen(arr); c++)
+			{
+				if (arr[c] < 48 || arr[c] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(arr);
+			arr++;
 		}
 
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-
-		count++;
+		printf("%d\n", sum);
 	}
-
-	printf("%d/n", sum);
 
 	return (0);
 }
